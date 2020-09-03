@@ -1,7 +1,7 @@
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_TOOL_CHAIN
-COPY pom.xml /app
-COPY src /app/src
 WORKDIR /app
+COPY pom.xml /app
+COPY src /app
 RUN mvn package
 
 FROM openjdk:8-jre-slim
